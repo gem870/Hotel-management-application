@@ -21,7 +21,7 @@ longStars = "*******************************************************************
 longQualTo = "=========================================================";
 
 
-
+// --------------- my class -----------<
 class hetelManagement {
 public:
     //  quantity of items
@@ -34,7 +34,7 @@ public:
     int demand1 = 0, demand2 = 0, demand3 = 0, demand4 = 0, demand5 = 0, demand6 = 0, demand7 = 0;
 
 
-
+// ---------------------<< check input function>>-----------
     int validate() {
         int number;
         while (!(cin >> number)) {
@@ -45,6 +45,7 @@ public:
         }
         return number;
     }
+//------------ << function or adding food availabel to the menu >>-----------------
     void addFoodItems() {
         system("cls");
         cout << endl << endl;
@@ -61,6 +62,7 @@ public:
         cout << greaterThan << "Beef    Qt: ";
         cin >> Qbeef;
     }
+// --------------<< funcion adding available hotel rooms >>------------
     void addHotelRooms() {
         system("cls");
         cout << endl << endl;
@@ -71,7 +73,8 @@ public:
         cout << greaterThan << "Number of normal rooms:    ";
         cin >> rooms;
     }
-    void salesFormation() {
+// ---------------<< function that prints daily records >>----------------------
+        void salesFormation() {
         cout << endl << endl;
         cout << longDashLesft << "     HERITAGE HOTEL     " << longDashRight << endl;
         cout << shortDashLesft << "Information rgarding to sales and collections." << shortDashRight << endl;
@@ -85,7 +88,7 @@ public:
                   myFile.close();
               }*/
 
-        myFile.open("heritage hotel.txt", ios::in);
+        myFile.open("heritage hotel.txt", ios::in); // ---------<< File handle for output record
         if (myFile.is_open()) {
             string line;
             while (getline(myFile, line)) {
@@ -93,12 +96,14 @@ public:
             }
             myFile.close();
         }
+            cerr << ">>      Error in opening file !! << endl;
         cout << longQualTo << endl << endl;
         cout << endl;
         cout << ">>  Exit with any number: ";
         int number;
         cin >> number;
     }
+//--------------<< this function is t display quantity of items available >>------------------
     void checkQuantity() {
         system("cls");
         cout << endl << endl;
@@ -112,6 +117,7 @@ public:
         cout << " Beef:    " << Qbeef << endl;
         cout << longQualTo << endl << endl;
     }
+//----------------------<< this function displays the price of each item >>--------------------------
     void showPrice() {
         system("cls");
         cout << endl << endl;
@@ -130,6 +136,8 @@ public:
         cin >> number;
 
     }
+
+//--------------------------<< the function for adding price to the menu >>------------------------------
     void priceTag() {
         system("cls");
         cout << endl << endl;
@@ -152,6 +160,8 @@ public:
         cout << greaterThan << "Price for normal rooms:    $";
         cin >> price_nRoom;
     }
+
+// -----------------------<< A simple business calculator function >>--------------------
     void calculator() {
         system("clr");
         cout << endl << endl;
@@ -192,6 +202,7 @@ public:
 
 
     }
+//-------------------------------<< function for the main menu >>---------------------------------------
     void displayMenu() {
         system("cls");
         cout << endl << endl;
@@ -216,6 +227,7 @@ public:
 
 
     }
+//-----------------------------------<< function for displaying quantity of items after sales have bee made >>---------------------------
     void availableItemsAndCollections() {
         system("cls");
         cout << endl << endl;
@@ -237,11 +249,13 @@ public:
         int number;
         cin >> number;
     }
+
+//--------------------------------------<< function for recording businass per each sales >>---------------------------
     void businessRecord() {
 
-        ofstream outputFile;
+        ofstream outputFile; //-------------<< file handle for input record 
 
-        outputFile.open("heritage hotel.txt", ios::app);
+        outputFile.open("heritage hotel.txt", ios::app); 
 
         if (!outputFile) {
 
@@ -276,6 +290,7 @@ public:
 
 
     }
+//-------------------------<< function for placing order >>---------------------------------------
     void booking() {
         system("cls");
         cout << endl;
